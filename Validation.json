@@ -174,7 +174,7 @@
             {
               "id": "6a28fc73-c2a8-4357-89b9-17826b3c12a3",
               "name": "response",
-              "value": "=Submitted. Request ID {{ $json.id }}, status Pending (awaiting review, not approved).",
+              "value": "=Submitted. Request ID {{ $json.leave_request_id }}, status Pending (awaiting review, not approved).",
               "type": "string"
             }
           ]
@@ -216,7 +216,7 @@
     {
       "parameters": {
         "sendTo": "tasneema315@gmail.com",
-        "subject": "New leave request – {{ $('Validate').item.json.full_name }} ({{ $('Validate').item.json.leave_type }})",
+        "subject": "New leave request",
         "emailType": "text",
         "message": "=Dear Dr. Salma,  A new leave request has been submitted and is waiting for your review.  Employee: {{ $('Get a row').item.json.full_name }} is requesting a Leave type: {{ $('When Executed by Another Workflow').item.json.leave_type }} From: {{ $('When Executed by Another Workflow').item.json.start_date }} To:{{ $('When Executed by Another Workflow').item.json.end_date }}  Number of days: {{ $('Validate request').item.json.days }} Employee note: {{ $('When Executed by Another Workflow').item.json.employee_note }} Request ID: {{ $('Create a row').item.json.leave_request_id }} Status: Pending  Please review and approve or reject this request.  Best regards, MedFlow HR Assistant",
         "options": {}
@@ -224,7 +224,7 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.2,
       "position": [
-        816,
+        800,
         -80
       ],
       "id": "16e8ca50-d6bc-486d-8e98-0efeb9bd3d0a",
@@ -597,12 +597,12 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "6a9954b1-9000-4616-9e90-caebd4e2438b",
+  "versionId": "fa9bb64c-025b-4ad7-b8b6-d6cfdc816e43",
   "meta": {
     "instanceId": "31a21ec25b9c30b21017c912a546be30982778ce32c7ba5d191d567154cc63b7"
   },
